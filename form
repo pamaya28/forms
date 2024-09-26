@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario</title>
+</head>
+<body>
+  <h1>Formulario</h1>
+
+  <form id="myForm">
+    <label for="firstName">Nombre:</label>
+    <input type="text" id="firstName" name="firstName" required><br><br>
+
+    <label for="lastName">Apellido:</label>
+    <input type="text" id="lastName" name="lastName" required><br><br>
+
+    <label for="phoneNumber">Número de contacto:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" required><br><br>
+
+    <input type="submit" value="Enviar">
+  </form>
+
+  <script>
+    // Obtener el formulario
+    const form = document.getElementById("myForm");
+
+    // Agregar evento de envío
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+
+      // Obtener los valores de los campos del formulario
+      const firstName = document.getElementById("firstName").value;
+      const lastName = document.getElementById("lastName").value;
+      const phoneNumber = document.getElementById("phoneNumber").value;
+
+      // Imprimir los valores en la consola
+      console.log("Nombre:", firstName);
+      console.log("Apellido:", lastName);
+      console.log("Número de contacto:", phoneNumber);
+
+      // Aquí puedes agregar tu lógica para procesar los datos del formulario
+
+      // Resetear el formulario
+      form.reset();
+    });
+  </script>
+</body>
+</html>
